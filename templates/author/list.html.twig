@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AuthorController!{% endblock %}
+
+{% block body %}
+    <div class="">
+        <p class="mb-2 hover:underline text-center">number of authors : {{ authors|length }}</p>
+        <div>
+            {% for author in authors %}
+                <div class="flex space-x-5">
+                    <p class="uppercase">{{ author.username }}</p>
+                    <span>//</span>
+                    <p>number of books: {{ author.nb_books }}</p>
+                    <span>//</span>
+                    <a class="underline hover:no-underline" href="/author/{{ author.id }}">Details</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AuthorController!{% endblock %}
+
+{% block body %}
+    <div class="flex flex-col">
+        {% if author|length %}
+            <div class="flex flex-col items-center border border-black p-2 rounded-lg max-w-56 h-full ">
+                <p class="text-xl">{{ author.username }}</p>
+                <p class="font-thin">{{ author.email }}</p>
+                <p class="font-thin mb-3">number of books: {{ author.nb_books }}</p>
+                <img class="object-contain" src="{{ author.picture }}" alt="image">
+            </div>
+        {% else %}
+            <p>Author not found.</p>
+        {% endif %}
+        <a class="text-center hover:underline" href="/authors">Back</a>
+    </div>
+{% endblock %}
